@@ -4,7 +4,7 @@
 #
 Name     : pypi-responses
 Version  : 0.16.0
-Release  : 39
+Release  : 40
 URL      : https://files.pythonhosted.org/packages/e7/e5/2c0a007b8be5c09a4bc84af7d95c4c6450bd9467510aa856c7de0132d9eb/responses-0.16.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e7/e5/2c0a007b8be5c09a4bc84af7d95c4c6450bd9467510aa856c7de0132d9eb/responses-0.16.0.tar.gz
 Summary  : A utility library for mocking out the `requests` Python library.
@@ -13,21 +13,19 @@ License  : Apache-2.0
 Requires: pypi-responses-license = %{version}-%{release}
 Requires: pypi-responses-python = %{version}-%{release}
 Requires: pypi-responses-python3 = %{version}-%{release}
-BuildRequires : Werkzeug
 BuildRequires : buildreq-distutils3
-Provides: responses
-Provides: responses-python
-Provides: responses-python3
-BuildRequires : coverage
-BuildRequires : flake8
 BuildRequires : pypi(cookies)
+BuildRequires : pypi(coverage)
+BuildRequires : pypi(flake8)
 BuildRequires : pypi(mock)
+BuildRequires : pypi(pytest)
+BuildRequires : pypi(pytest_cov)
+BuildRequires : pypi(pytest_localserver)
 BuildRequires : pypi(requests)
 BuildRequires : pypi(six)
 BuildRequires : pypi(urllib3)
-BuildRequires : pytest
-BuildRequires : pytest-cov
-BuildRequires : pytest-localserver
+BuildRequires : pypi(werkzeug)
+BuildRequires : pypi-pytest
 
 %description
 Responses
@@ -76,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641489866
+export SOURCE_DATE_EPOCH=1641652574
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "

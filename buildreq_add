@@ -1,8 +1,9 @@
 # This file contains additional build requirements that did not get
 # picked up automatically.  One name per line, no whitespace.
-Werkzeug
-coverage
-flake8
-pytest
-pytest-cov
-pytest-localserver
+pypi(werkzeug)
+pypi(coverage)
+pypi(flake8)
+pypi(pytest)
+pypi(pytest_cov)
+pypi(pytest_localserver)
+pypi-pytest
