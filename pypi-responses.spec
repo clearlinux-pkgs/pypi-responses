@@ -4,7 +4,7 @@
 #
 Name     : pypi-responses
 Version  : 0.21.0
-Release  : 50
+Release  : 51
 URL      : https://files.pythonhosted.org/packages/6d/db/b949a6bf2a75c64caea0a6b39d05e433aa2e51bea78ae9d5dda1110b31a5/responses-0.21.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/6d/db/b949a6bf2a75c64caea0a6b39d05e433aa2e51bea78ae9d5dda1110b31a5/responses-0.21.0.tar.gz
 Summary  : A utility library for mocking out the `requests` Python library.
@@ -53,6 +53,8 @@ Group: Default
 Requires: python3-core
 Provides: pypi(responses)
 Requires: pypi(requests)
+Requires: pypi(toml)
+Requires: pypi(types_toml)
 Requires: pypi(urllib3)
 
 %description python3
@@ -71,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656404738
+export SOURCE_DATE_EPOCH=1666724434
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -80,11 +82,6 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-pytest
 pushd ../buildavx2/
 export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
@@ -94,11 +91,18 @@ export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 python3 setup.py build
 
 popd
+%check
+export LANG=C.UTF-8
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+pytest
+
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-responses
-cp %{_builddir}/responses-0.21.0/LICENSE %{buildroot}/usr/share/package-licenses/pypi-responses/cef33b64c628a8301c7f0a1d2360484b9fe5bed1
+cp %{_builddir}/responses-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-responses/cef33b64c628a8301c7f0a1d2360484b9fe5bed1 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
