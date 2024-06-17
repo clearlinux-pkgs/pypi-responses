@@ -1,5 +1,5 @@
 PKG_NAME := pypi-responses
-URL = https://files.pythonhosted.org/packages/20/87/fde4e9f578a61ecce6528f36619c4d27e8d80c1d309efbc776edd8c8294d/responses-0.25.2.tar.gz
+URL = https://files.pythonhosted.org/packages/67/24/1d67c8974daa502e860b4a5b57ad6de0d7dbc0b1160ef7148189a24a40e1/responses-0.25.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

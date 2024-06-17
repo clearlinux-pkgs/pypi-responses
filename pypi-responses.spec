@@ -6,10 +6,10 @@
 # autospec commit: fbcebd0
 #
 Name     : pypi-responses
-Version  : 0.25.2
-Release  : 62
-URL      : https://files.pythonhosted.org/packages/20/87/fde4e9f578a61ecce6528f36619c4d27e8d80c1d309efbc776edd8c8294d/responses-0.25.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/20/87/fde4e9f578a61ecce6528f36619c4d27e8d80c1d309efbc776edd8c8294d/responses-0.25.2.tar.gz
+Version  : 0.25.3
+Release  : 63
+URL      : https://files.pythonhosted.org/packages/67/24/1d67c8974daa502e860b4a5b57ad6de0d7dbc0b1160ef7148189a24a40e1/responses-0.25.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/67/24/1d67c8974daa502e860b4a5b57ad6de0d7dbc0b1160ef7148189a24a40e1/responses-0.25.3.tar.gz
 Summary  : A utility library for mocking out the `requests` Python library.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -68,10 +68,10 @@ python3 components for the pypi-responses package.
 
 
 %prep
-%setup -q -n responses-0.25.2
-cd %{_builddir}/responses-0.25.2
+%setup -q -n responses-0.25.3
+cd %{_builddir}/responses-0.25.3
 pushd ..
-cp -a responses-0.25.2 buildavx2
+cp -a responses-0.25.3 buildavx2
 popd
 
 %build
@@ -79,7 +79,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1717701067
+export SOURCE_DATE_EPOCH=1718605552
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
