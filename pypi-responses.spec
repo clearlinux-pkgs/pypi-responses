@@ -7,7 +7,7 @@
 #
 Name     : pypi-responses
 Version  : 0.25.6
-Release  : 65
+Release  : 66
 URL      : https://files.pythonhosted.org/packages/97/63/759996eea0f17e8dc4c9ea9c60765292d28a7750bdbee073ad55d83caa57/responses-0.25.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/97/63/759996eea0f17e8dc4c9ea9c60765292d28a7750bdbee073ad55d83caa57/responses-0.25.6.tar.gz
 Summary  : A utility library for mocking out the `requests` Python library.
